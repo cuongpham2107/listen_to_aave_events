@@ -150,15 +150,15 @@ async function listenToPoolEvents() {
 
   // Lắng nghe sự kiện Supply
   poolContract.on("Supply", (reserve, user, onBehalfOf, amount, referralCode, event) => {
-    console.log('Supply Event:', {
-      reserve,
-      user,
-      onBehalfOf,
-      amount: ethers.formatEther(amount),
-      referralCode,
-      blockNumber: event.blockNumber,
-      transactionHash: event.transactionHash
-    });
+    const log = `Sự kiện Supply: \n` +
+        `  - Reserve: ${reserve} \n` +
+        `  - Người dùng: ${user} \n` +
+        `  - Trên behalf của: ${onBehalfOf} \n` +
+        `  - Số lượng: ${ethers.formatEther(amount)} \n` +
+        `  - Mã giới thiệu: ${referralCode} \n` +
+        `  - Block number: ${event.blockNumber} \n` +
+        `  - Transaction hash: ${event.transactionHash} \n`;
+      console.log(log);
   });
 
   // Lắng nghe sự kiện Borrow
@@ -178,27 +178,27 @@ async function listenToPoolEvents() {
 
   // Lắng nghe sự kiện Repay
   poolContract.on("Repay", (reserve, user, repayer, amount, useATokens, event) => {
-    console.log('Repay Event:', {
-      reserve,
-      user,
-      repayer,
-      amount: ethers.formatEther(amount),
-      useATokens,
-      blockNumber: event.blockNumber,
-      transactionHash: event.transactionHash
-    });
+    const log = `Sự kiện Repay: \n` +
+        `  - Reserve: ${reserve} \n` +
+        `  - Người dùng: ${user} \n` +
+        `  - Người trả nợ: ${repayer} \n` +
+        `  - Số lượng: ${ethers.formatEther(amount)} \n` +
+        `  - Sử dụng aTokens: ${useATokens} \n` +
+        `  - Block number: ${event.blockNumber} \n` +
+        `  - Transaction hash: ${event.transactionHash} \n`;
+      console.log(log);
   });
 
   // Lắng nghe sự kiện Withdraw
   poolContract.on("Withdraw", (reserve, user, to, amount, event) => {
-    console.log('Withdraw Event:', {
-      reserve,
-      user,
-      to,
-      amount: ethers.formatEther(amount),
-      blockNumber: event.blockNumber,
-      transactionHash: event.transactionHash
-    });
+    const log = `Sự kiện Withdraw: \n` +
+        `  - Reserve: ${reserve} \n` +
+        `  - Người dùng: ${user} \n` +
+        `  - Đến: ${to} \n` +
+        `  - Số lượng: ${ethers.formatEther(amount)} \n` +
+        `  - Block number: ${event.blockNumber} \n` +
+        `  - Transaction hash: ${event.transactionHash} \n`;
+      console.log(log);
   });
 
   console.log('Started listening to Aave Pool events...');
