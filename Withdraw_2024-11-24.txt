@@ -1,0 +1,9 @@
+2024-11-24T14:00:49.981Z - {
+  "loaiSuKien": "Rút Tài Sản",
+  "tokenDuTru": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+  "nguoiDung": "0xFC88e456b3a5620E63A449cE429dCcF2687cac26",
+  "nguoiNhan": "0xFC88e456b3a5620E63A449cE429dCcF2687cac26",
+  "soLuong": "0.00000000025",
+  "thoiGian": "2024-11-24T14:00:49.979Z"
+}
+
